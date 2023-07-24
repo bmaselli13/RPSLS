@@ -26,5 +26,7 @@ namespace RPSLS
         //Member Methods (CAN DO)
         //This abstract method must be overridden by the child Player classes
         public abstract void ChooseGesture();
+        
+
     }
 }
