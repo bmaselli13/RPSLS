@@ -27,10 +27,13 @@ namespace RPSLS
                 "Lizard poisons Spock\n" + "Spock smashes Scissors\nScissors " +
                 "decapitates Lizard\n" + "Lizard eats Paper\nPaper disproves " +
                 "Spock\n" + "Spock vaporizes Rock\n");
+            Console.WriteLine("The game will be best out of 3!\n");
         }
 
         public int ChooseNumberOfHumanPlayers()
         {
+            Console.WriteLine("How many players will there be?");
+            Console.ReadLine();
             return 0;
         }
 
