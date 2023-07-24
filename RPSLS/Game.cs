@@ -32,8 +32,6 @@ namespace RPSLS
 
         public int ChooseNumberOfHumanPlayers()
         {
-            Console.WriteLine("How many players will there be?");
-            Console.ReadLine();
             return 0;
         }
 
@@ -44,12 +42,38 @@ namespace RPSLS
 
         public void CompareGestures()
         {
+            
+            string player1Choice = Console.ReadLine();
+            string player2Choice = Console.ReadLine();
+
+            // Check the different possibilities using if-else statements
+            if (player1Choice == player2Choice)
+            {
+                // It's a tie
+                Console.WriteLine("It's a tie! Both players chose " + player1Choice);
+            }
+            else if (
+                (player1Choice == "Rock" && (player2Choice == "Scissors" || player2Choice == "Lizard")) ||
+                (player1Choice == "Paper" && (player2Choice == "Rock" || player2Choice == "Spock")) ||
+                (player1Choice == "Scissors" && (player2Choice == "Paper" || player2Choice == "Lizard")) ||
+                (player1Choice == "Lizard" && (player2Choice == "Paper" || player2Choice == "Spock")) ||
+                (player1Choice == "Spock" && (player2Choice == "Rock" || player2Choice == "Scissors"))
+            )
+            {
+                // Player 1 wins
+                Console.WriteLine("Player 1 wins! " + player1Choice + " beats " + player2Choice);
+            }
+            else
+            {
+                // Player 2 wins
+                Console.WriteLine("Player 2 wins! " + player2Choice + " beats " + player1Choice);
+            }
 
         }
 
         public void DisplayGameWinner()
         {
-
+            //if(playerOne.score ==  )
         }
 
         public void RunGame()

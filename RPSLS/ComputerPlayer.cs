@@ -5,7 +5,14 @@ namespace RPSLS
 	{
 		public ComputerPlayer()
 		{
-		}
-	}
+            //HAS A
+
+
+            //Constructor
+
+
+            //CAN DO
+        }
+    }
 }
 
