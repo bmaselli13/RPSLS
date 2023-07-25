@@ -17,10 +17,10 @@ namespace RPSLS
         public Game()
         {
             //Player One Name
-            this.playerOne = playerOne;
+            //Player playerOne = new Player(name);
 
             //Player 2 name
-            this.playerTwo = playerTwo;
+            //this.playerTwo = playerTwo;
 
             //Computer Player
             //this.playerComp = playerComp;
@@ -55,26 +55,54 @@ namespace RPSLS
         }
 
         public void CreatePlayerObjects(int numberOfHumanPlayers)
-        {
-            //Create a human player based on the users input
-            //Create a Computer player if only one player entered
-            if (numberOfHumanPlayers >= 1)
-            {
-                Human playerOne = new Human(this.playerOne.name);
-                Human playerTwo = new Human(this.playerTwo.name);
-            }
-            else if(numberOfHumanPlayers == 1)
-            {
-                Human playerOne = new Human(this.playerOne.name);
-                Computer playerTwo = new Computer(this.playerTwo.name);
-            }
-                
-                
 
+        {
+
+            Console.WriteLine("Please 1 enter your name:");            
+            string playerOneName = Console.ReadLine();
+            
+                      
+
+            if (numberOfHumanPlayers > 1)
+            {
+                Console.WriteLine("Please 2 enter your name:");                
+                string playerTwoName = Console.ReadLine();
+
+                playerOne = new Human(playerOneName);                               
+                playerTwo = new Human(playerTwoName);
+            }
+            else if (numberOfHumanPlayers == 1)
+            {
+                
+                playerOne = new Human(playerOneName);
+                playerTwo = new Computer("Computer");
+            }
+            
+            
         }
 
         public void CompareGestures()
+            
+
         {
+
+            //string player1Choice = ;
+            //string player2Choice = ;
+
+            //Players choose their gestures
+
+
+            //if (player1Choice == player2Choice)
+            //{
+            //    // It's a tie
+            //    Console.WriteLine("It's a tie! Both players chose " + player1Choice);
+            //}
+            //else if (
+            //    (player1Choice == "Rock" && (player2Choice == "Scissors" || player2Choice == "Lizard")) ||
+            //    (player1Choice == "Paper" && (player2Choice == "Rock" || player2Choice == "Spock")) ||
+            //    (player1Choice == "Scissors" && (player2Choice == "Paper" || player2Choice == "Lizard")) ||
+            //    (player1Choice == "Lizard" && (player2Choice == "Paper" || player2Choice == "Spock")) ||
+            //    (player1Choice == "Spock" && (player2Choice == "Rock" || player2Choice == "Scissors"))) ;
             
         }
 
@@ -91,10 +119,12 @@ namespace RPSLS
             if(playerOneScore > 1)
             {
                 Console.WriteLine("Player 1 wins the game!");
+                playerOneScore++;
             }
             else if(playerTwoScore > 1)
             {
                 Console.WriteLine("Player 2 wins the game!");
+                playerTwoScore++;
             }
         }
 

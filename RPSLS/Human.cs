@@ -4,12 +4,13 @@ namespace RPSLS
 	public class Human : Player
 	{
 
-		//HAS A
-
-		//Constructor
-		public Human(string name):base (name)
-		{			
-			this.chosenGesture = chosenGesture;
+        //HAS A
+        
+        //Constructor
+        public Human(string name):base (name)
+		{
+            
+            this.chosenGesture = chosenGesture;
 			this.score = score;
 		}
 
@@ -18,7 +19,8 @@ namespace RPSLS
         //CAN DO
         public override void ChooseGesture()
         {
-			Console.WriteLine("Here are your options (Choose one): \"rock\", \"paper\", \"scissors\", \"lizard\", \"Spock\"");
+			Console.WriteLine($"Here are your options (Choose one): {gestures}");
+			Console.ReadLine();
         }
 
     }
