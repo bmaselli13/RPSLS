@@ -11,19 +11,11 @@ namespace RPSLS
         //Member Variabes (HAS A)
         public Player playerOne;
         public Player playerTwo;
-        //public Player playerComp;
 
         //Constructor
         public Game()
         {
-            //Player One Name
-            //Player playerOne = new Player(name);
 
-            //Player 2 name
-            //this.playerTwo = playerTwo;
-
-            //Computer Player
-            //this.playerComp = playerComp;
         }
 
         //Member Methods (CAN DO)
@@ -59,8 +51,7 @@ namespace RPSLS
         {
 
             Console.WriteLine("Please 1 enter your name:");            
-            string playerOneName = Console.ReadLine();
-            
+            string playerOneName = Console.ReadLine();            
                       
 
             if (numberOfHumanPlayers > 1)
@@ -81,50 +72,105 @@ namespace RPSLS
             
         }
 
-        public void CompareGestures()
-            
+        public void CompareGestures()            
 
-        {
+        {            
 
-            //string player1Choice = ;
-            //string player2Choice = ;
-
-            //Players choose their gestures
-
-
-            //if (player1Choice == player2Choice)
-            //{
-            //    // It's a tie
-            //    Console.WriteLine("It's a tie! Both players chose " + player1Choice);
-            //}
-            //else if (
-            //    (player1Choice == "Rock" && (player2Choice == "Scissors" || player2Choice == "Lizard")) ||
-            //    (player1Choice == "Paper" && (player2Choice == "Rock" || player2Choice == "Spock")) ||
-            //    (player1Choice == "Scissors" && (player2Choice == "Paper" || player2Choice == "Lizard")) ||
-            //    (player1Choice == "Lizard" && (player2Choice == "Paper" || player2Choice == "Spock")) ||
-            //    (player1Choice == "Spock" && (player2Choice == "Rock" || player2Choice == "Scissors"))) ;
-            
-        }
-
-        public void DisplayRoundWinner()
-        {
-      
-        }
-
-        public void DisplayGameWinner()
-        {
-            int playerOneScore = 0;
-            int playerTwoScore = 0;
-
-            if(playerOneScore > 1)
+            while (playerOne.score < 2 && playerTwo.score < 2) // This loop allows the game to continue until there is a winner
             {
-                Console.WriteLine("Player 1 wins the game!");
-                playerOneScore++;
+                playerOne.ChooseGesture();
+                playerTwo.ChooseGesture();
+                
+                if (playerOne.chosenGesture == "Rock" && playerTwo.chosenGesture == "Scissors")
+                {
+                    playerOne.score++;                              
+                }
+                else if ((playerOne.chosenGesture == "Scissors" && playerTwo.chosenGesture == "Rock"))
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Paper" && playerTwo.chosenGesture == "Rock")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Paper" && playerTwo.chosenGesture == "Rock")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Rock" && playerTwo.chosenGesture == "Lizard")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Lizard" && playerTwo.chosenGesture == "Rock")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Lizard" && playerTwo.chosenGesture == "Spock")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "Lizard")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "Scissors")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Scissors" && playerTwo.chosenGesture == "Spock")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Scissors" && playerTwo.chosenGesture == "Lizard")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Lizard" && playerTwo.chosenGesture == "Scissors")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Lizard" && playerTwo.chosenGesture == "Paper")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Paper" && playerTwo.chosenGesture == "Lizard")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Paper" && playerTwo.chosenGesture == "Spock")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "Paper")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "Rock")
+                {
+                    playerOne.score++;
+                }
+                else if (playerOne.chosenGesture == "Rock" && playerTwo.chosenGesture == "Spock")
+                {
+                    playerTwo.score++;
+                }
+                else if (playerOne.chosenGesture == playerTwo.chosenGesture)
+                {
+                    Console.WriteLine("It's a tie!");
+                }
             }
-            else if(playerTwoScore > 1)
+            
+        }
+
+       public void DisplayGameWinner()
+        {
+            
+            if(playerOne.score == 2)
             {
-                Console.WriteLine("Player 2 wins the game!");
-                playerTwoScore++;
+                Console.WriteLine("Player 1 wins the game!");               
+            }
+            else if(playerTwo.score == 2)
+            {
+                Console.WriteLine("Player 2 wins the game!");                
             }
         }
 
@@ -142,6 +188,9 @@ namespace RPSLS
             //Logic: Compare those gestures to one another based on the rules of
             //the game to determine who wins. If one players wins, increment
             //their score by 1.
+            playerOne.ChooseGesture();
+            playerTwo.ChooseGesture();
+
             CompareGestures();
 
             //Step 4: Display the winner of round

@@ -10,17 +10,21 @@ namespace RPSLS
         public Human(string name):base (name)
 		{
             
-            this.chosenGesture = chosenGesture;
-			this.score = score;
+            
 		}
-
-
 
         //CAN DO
         public override void ChooseGesture()
-        {
-			Console.WriteLine($"Here are your options (Choose one): {gestures}");
-			Console.ReadLine();
+        {            
+            
+            {
+                Console.WriteLine($"Here are your options (Choose one):\n Rock\n Paper\n Scissors\n Lizard\n Spock\n");
+                Console.WriteLine("Enter your choice: ");
+                chosenGesture = Console.ReadLine();
+                Console.WriteLine($"Player chooses {chosenGesture}");
+
+            }
+            
         }
 
     }

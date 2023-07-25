@@ -11,16 +11,18 @@ namespace RPSLS
         //Constructor
         public Computer(string name) : base(name)
         {
-            this.chosenGesture = chosenGesture;
-            this.score = score;
+            
             
         }
 
             //CAN DO
             public override void ChooseGesture()
         {
-            //select random gesture from list
-            //rand.Next(chosenGesture);
+            
+            Random random = new Random();
+            chosenGesture = new string[] { "Rock", "Paper", "Scissors", "Lizard", "Spock" }[random.Next(5)];
+
+            Console.WriteLine("Computer chooses: " + chosenGesture);
 
         }
         

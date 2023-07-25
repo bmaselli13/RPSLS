@@ -18,9 +18,9 @@ namespace RPSLS
         public Player(string name)
         {
             this.name = name;
-            gestures = new List<string> {"rock", "paper", "scissors", "lizard", "Spock" };
-            chosenGesture = "";
-            score = 0;
+            this.gestures = new List<string> {"rock", "paper", "scissors", "lizard", "Spock"};
+            this.chosenGesture = "";
+            this.score = 0;
         }
 
         //Member Methods (CAN DO)
